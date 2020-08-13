@@ -1,0 +1,59 @@
+Link to video : https://drive.google.com/open?id=1hNF28a4d6-y3wnInkZw8BAHQGS3MocKD
+
+Name: Mattheas Jamieson, Jenish Patel
+ID: 1601689, 1572027
+CMPUT 275, Winter 2020
+
+Final Project: Pong
+
+Included Files server:
+	* main.cpp
+	* EEPROM.h
+	* pong.h
+	* paddle.h
+	* Metro.h
+	* Metro.cpp
+	* const_and_lib.h
+	* Makefile
+	* README
+
+Accessories:
+	* Arduino Mega 2560
+	* Arduino compatible TFT display
+	* multiple M to M wires
+	* serial cable connecting arduino to computer
+
+Wiring Instructions:
+
+	* Mount the TFT display on the Arduino
+
+	* Joystick
+	  VRx <--> A8
+	  VRy <--> A9
+	  SW  <--> Digital Pin 53
+	  GND <--> GND
+	  +5V <--> 5V
+
+Running Instructions:
+	 Start by ensuring that all files are in your chosen directory. Open the terminal and execute "make". This is compile
+	 the code (No errors are expected). Then "make upload" command will start the serial communication between the computer
+	 and the arduino.
+
+	 The game is very intuitive. The user can start the game by pressing button using stylus. A new screen will pop and it will
+	 ask for player 1 and player 2 initials. These initials will be stored in the Arduino, the data will not be removed if the
+	 arduino is turned off. This was done using the EEPROM library. The next screen is the instructions menu which will direct
+	 you with the rules.
+
+	 Once in the gameplay screen, a player may use the keyboard or the joystick to move the paddle up and down. The keys "w" and
+	 "s" will move the left paddle up and down. In this scenario, the left paddle will be on the side of the screen which is close
+	 to the USB communication. The keyboard method was an alternative method used because we were not able to do the serial communication
+	 between two Arduinos.   
+
+
+Notes and Assumptions:
+	Code was implemented to the best of our ability and to the best of our understanding
+	from the description. The leaderboard is saved in the eeprom of the arduino. The top
+	three scores are saved along with their intials which totals 9 bytes. In order this
+	is the initals of the top score, followed by its score. The initals of second highest
+	score, followed by the score, and lastly by the initals of the third highest score, and
+	then followed by the score. 

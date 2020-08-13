@@ -1,0 +1,44 @@
+Name: Jenish Patel
+ID #: 1572027
+CMPUT 275 Winter 2019
+
+Weekly Assignment: Display and Joystick
+
+Included Files:
+	* joy_cursor.cpp
+	* lcd_image.cpp
+	* lcd_image.h
+	* Makefile
+	* README
+
+Accessories:
+	* 1 Arduino Mega Board (AMG)
+	* TFT LCD Display
+	* Joystick
+	* Wires
+
+Wiring instructions: 
+	* Arduino 5V <--> Breadboard <--> 5V Joystick
+	* Arduino GND <--> Breadboard <--> GND Joystick
+	* Arduino Analog pin A8 <--> VRy Joystick
+	* Arduino Analog pin A9 <--> VRx Joystick
+	* Ardiuno Digital pin 53 <--> SW Joystick
+
+Running instructions:
+	1. Mount the TFT Display to the Arduino. For full wiring instruction, Visit CMPUT 275 eClass page, under lecture 1 in Block 1.
+
+	2. Connect the Ardiuno to PC using the USB cables. Make sure that the Ardiuno is using the proper serial port (/dev/ttuACMO or -ACM1).
+
+	3. Before mak upload make sure that the microSD is inserted into the TFT display.
+
+	4. In the directory containing the files joy_cursor.cpp and Makefile, use the command "make upload " to upload the code to the Arduino.
+
+	5. Use the Joystick to control the cursor on the TFT diplay.
+
+
+General overview:
+	The purpose of the program is display a cursor on a LCD display. A learning objective in the program is how the graphics of a cursor works. Using the previous position of the image, we can visualize that the cursor is seamlessly moving over the image, but actually a small part of the image is drawn over the previous.
+
+Assumptions and extra guidelines:
+	- With the exception of global variables cursorX and cursorY, there were two more global variables were added to store the position of the map's middle.
+	- The speed of the cursor is variable. If the joystick is pushed to the max it will move at max speed, or if it is not then it will travel at a slower rate.

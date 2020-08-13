@@ -1,0 +1,37 @@
+Name: Jenish Patel
+ID #: 1572027
+CMPUT 275 Winter 2019
+
+Weekly Assignment: Display and Pointers
+
+Included Files:
+	* get_restaurant.cpp
+	* Makefile
+	* README
+
+Accessories:
+	* 1 Arduino Mega Board (AMG)
+	* TFT LCD Display
+	* Stylus
+	* Wires
+
+Wiring instructions: 
+	* Mount TFT diplay
+
+Running instructions:
+	1. Mount the TFT Display to the Arduino. For full wiring instruction, Visit CMPUT 275 eClass page, under lecture 1 in Block 1.
+
+	2. Connect the Ardiuno to PC using the USB cables. Make sure that the Ardiuno is using the proper serial port (/dev/ttuACMO or -ACM1).
+
+	3. Before make upload make sure that the microSD is inserted into the TFT display.
+
+	4. In the directory containing the files get_restaurant.cpp and Makefile, use the command "make upload " to upload the code to the Arduino.
+
+	5. Use the Stylus to choose different retrieval methods on the TFT diplay.
+
+
+General overview:
+	The purpose of the program is determine the run time of two different retrieval methods. To retrieve restaurant information from SD card, we can read block containing data and store it in a structure. However, calling read block function everytime is inefficient because each block is 512 bytes, and each block holds data for 8 restaurants. So to avoid re-read from block, we can read the block every 8 iterations. To proof the point, we can compute the run times of the two retrieval methods (slow and fast) and see the difference.
+
+Assumptions and extra guidelines:
+	- Global variables were used to calculate and store average run times of slow and fast retrieval methods

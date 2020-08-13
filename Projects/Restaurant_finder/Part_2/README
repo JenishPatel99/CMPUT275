@@ -1,0 +1,68 @@
+Name: Mattheas Jamieson, Jenish Patel
+ID: 1601689, 1572027
+CMPUT 275, Winter 2020
+
+Major Assignment: Restaurant Finder Part 2
+
+Included Files:
+	* a1part2.cpp
+	* a1part2.h
+	* README
+	* Makefile
+	* lcd_image.h
+	* lcd_image.cpp
+
+Accessories:
+	* 1x Arduino MEGA 2560 Board
+	* 1x USB Cable
+	* 1x 3.5" TFT LCD 480x320 Arduino Touch Screen
+	* 5x Breadboard M/F Male-to-Female Jumper Wires
+	* 1x Joystick Module
+	* 1x Formatted Kingston 8/16GB Micro SD card SDHC Class 10 UHS-I microSDHC Card
+
+Wiring Instructions:
+	* Arduino analog pin A8 should connect to joystick VRy( requires bending of pin with TFT display installed )
+	* Arduino analog pin A9 should connect to joystick VRx( requires bending of pin with TFT display installed )
+	* Arduino digital pin 53 should connect to joystick pin SW
+	* Arduino GND connect to GND joystick pin
+	* Arduino 5v connect to 5v joystick pin
+	* Install TFT display onto Arduino Mega Board
+
+Running Instructions:
+
+	A) How to connect the arduino to the terminal
+		1. Connect Arduino to the PC using A-B style USB cable. Ensure
+		that the Arduino is using the proper serial port 
+
+		2. In the directory containing the files a1part1.cpp, a1part.h and
+		Makefile, use the command "make upload && serial-mon" to upload the code 
+		the the Arduino for testing and be able to see the serial monitor.
+
+	B) How to use the program
+		1. After connecting the arduino, the tft display will show roughly the middle section of the Edmonton map.
+		   The map displayed occupies 420 pixels from the left and the other 60 pixels accommodates the
+		   restaurant rating threshold and the sorting method (algorithm).
+		2. The program has two different "modes" to access the restaurants. The first method is displaying restaurants
+		   has small dots on the map. The second method is centering the cursor over a chosen restaurant from a
+		   scrollable list.
+		3. Both approaches are dictated by the rating threshold and quick sort, insertion sort or both. For example,
+		   if the rating threshold button shows 3 and ISORT is displayed on the sorting method button, then either tapping
+		   on the screen or accessing the scrollable list will result in the restaurants that are 3 stars aboves and the
+		   sorting will be done using insertion sort.
+		4. Whenever, restaurants are displayed, the time that takes for either QSORT and ISORT will be shown on the serial
+		   monitor. If the BOTH option is selected, both QSORT and ISORT algorithms will be ran and both of their times will
+		   be shown on the serial monitor.
+
+Notes and Assumptions:
+	Code was implemented to the best of our ability and to the best of our understanding
+	from the description. The getRestaurantFast() was taken directly from Mattheas Jamieson's
+	Weekly Exercise. As well as other snippets of code was used from examples discussed in
+	class and from the description of the assignment.
+
+	The implementation of the cursor movement, displaying new portions of the map, accessing data from the 
+	restaurant structure and insertion sort was all finished in part 1. We have continued building part 2, on top
+	of the code structure of part 1.
+
+	In the rubric, it says that there are suppose to be 30 restaurants display after scrolling down the page. However, in the
+	part 2 video on eClass, there was only 21 restaurants. We implemented the video approach because displaying 30 restaurants'
+	names would decrease the font size and a lot of under the table calculations.

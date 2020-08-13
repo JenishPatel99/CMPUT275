@@ -1,0 +1,34 @@
+aName: Jenish Patel
+ID #: 1572027
+CMPUT 275 Winter 2019
+
+Weekly Assignment: Graph Concepts
+
+Included Files:
+	* graph_concepts.cpp
+	* digraph.h
+	* digraph.cpp
+	* Makefile (Custom)
+	* README
+
+Accessories:
+	* None required
+
+Wiring instructions: 
+	* None required
+
+Running instructions:
+	1. Download the components.tar.gz and extract the folder into desired directory
+	2. Use make 'specified target' to excute desired commands.
+	3. You can also interact with the program via terminal, due to nature of assignment
+	   no protection is there for inputs in terminal.
+
+Makefile Targets:
+		* "all" links student_hash.o and complex_postfix.o object files
+		* "make student_hash.o" links to create an executable
+		* "make student_hash.cpp" compiles the following object
+		* "make complex_postfix.o" links to create an executable
+		* "make complex_postfix.cpp" compiles the following object
+
+General overview:
+	

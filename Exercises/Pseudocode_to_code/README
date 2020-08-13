@@ -1,0 +1,39 @@
+Name: Jenish Patel
+ID #: 1572027
+CMPUT 275 Winter 2019
+
+Weekly Assignment: Pseudocode to code
+
+Included Files:
+	* flipflop.cpp
+	* textmath.cpp
+	* Makefile (Custom)
+	* README
+
+Accessories:
+	* None required
+
+Wiring instructions: 
+	* None required
+
+Running instructions:
+	1. Download the pseudocode.tar.gz and extract the folder into desired directory
+	2. Use make 'specified target' to excute desired commands.
+	3. You can also interact with the two programs via terminal, due to nature of assignment
+	   no protection is there for inputs in terminal.
+	   a) For flipflop program
+	   	- The first input is the length of array
+	   	- The second input is the elements of the array
+	   b) For textmatch program
+	   	- Both, first and second inputs are arrays
+
+Makefile Targets:
+		* "make flipflop" links corresponding object to executable flipflop
+		* "make flipflop.o" compiles flipflop.cpp to create object file
+		* "make textmatch" links corresponding object to executable textmatch
+		* "make textmatch.o" compiles textmatch.cpp to create object file
+
+
+
+General overview:
+	The program adapts two pseudocodes to create two c++ programs. The programs can be ran through test cases given in eclass to see if program excute properly.

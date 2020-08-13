@@ -1,0 +1,90 @@
+Name: Mattheas Jamieson, Jenish Patel
+ID: 1601689, 1572027
+CMPUT 275, Winter 2020
+
+Major Assignment 2: Driving Route Finder Part 2
+
+Included Files server:
+	* digraph.cpp
+	* digraph.h
+	* dijkstra.cpp
+	* dijkstra.h
+	* edmonton-roads-2.0.1.txt
+	* heap.h
+	* README
+	* serialport.cpp
+	* serialport.h
+	* serialtest
+	* serialtest.cpp
+	* server.cpp
+	* widigraph.h
+	* README
+
+Included Files client:
+	* client.cpp
+	* consts_and_types.h
+	* draw_route.cpp
+	* draw_route.h
+	* instructions.txt
+	* lcd_image.cpp
+	* lcd_image.h
+	* Makefile
+	* map_drawing.cpp
+	* map_drawing.h
+	* README
+	* serial_handling.cpp
+	* serial_handling.h
+
+Accessories:
+	* Arduino Mega 2560
+	* Arduino compatible TFT display
+	* Two push buttons
+	* multiple M to M wires
+	* serial cable connecting arduino to computer
+
+Wiring Instructions for client:
+
+	* Mount the TFT display on the Arduino just like with Assignment 1
+
+	* Joystick (same as with assignment 1)
+	  VRx <--> A8
+	  VRy <--> A9
+	  SW  <--> Digital Pin 53
+	  GND <--> GND
+	  +5V <--> 5V
+
+	  Two pushbuttons for zoom. They are initialized in the code with internal pullup
+	  resistors. So for each, one side is connected to GND and the other to a digital
+	  pin.
+
+	  Zoom Out Button <--> Digital Pin 47
+	  Zoom In Button  <--> Digital Pin 45
+
+Wiring Instructions for server:
+	* None
+
+Makefile Targets for client:
+	* "make" : links all objects files and creates an executable
+	* "dijkstra.o" : compiles dijkstra.cpp
+	* "server.o" : compiles server.cpp
+	* "digraph.o" : compiles digraph.cpp
+	* "clean" : removes the object and executable
+
+Makefile Targets for server:
+	* None
+
+Running Instructions Combined:
+	To run the client simply use the "arduino-port-select" command in the terminal of the client directory. 
+	Press "1" twice. Then type make upload and it should upload the program to the arduino. For the server
+	side it is slightly more complex. Only AFTER the client program is uploaded to the arduino call
+	"g++ server -o server" in the server directory. Then call the exectuable "./server", the screen of the
+	arduino should flash blue then reload. Then press at the "Ctrl-C", and then call the exectuable server
+	"./server" again. We find if you don't do this it tends not to work, that is calling the exectuable,
+	pressing ctrl-c and calling the exectuable again. 
+
+
+Notes and Assumptions:
+	Code was implemented to the best of our ability and to the best of our understanding
+	from the description. We took the wiring instructions directly from the "instructions.txt"
+	given to us in the client directory. Besides this please read the wiring instructions carefully
+	making sure to call the exectuable once, ctrl-c and then call it again. 

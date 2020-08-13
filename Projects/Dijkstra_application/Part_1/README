@@ -1,0 +1,56 @@
+Name: Mattheas Jamieson, Jenish Patel
+ID: 1601689, 1572027
+CMPUT 275, Winter 2020
+
+Major Assignment 2: Driving Route Finder Part 1
+
+Included Files:
+	* server.cpp
+	* heap.h
+	* README
+	* Makefile
+	* dijkstra.h
+	* dijkstra.cpp
+	* digraph.cpp
+	* digraph.h
+	* wdigraph.h
+	* edmonton-road-2.0.1.txt
+
+Accessories:
+	* None
+
+Wiring Instructions:
+	* None
+
+Makefile Targets:
+	* "make" : links all objects files and creates an executable
+	* "dijkstra.o" : compiles dijkstra.cpp
+	* "server.o" : compiles server.cpp
+	* "digraph.o" : compiles digraph.cpp
+	* "clean" : removes the object and executable
+
+Running Instructions:
+	This part of the assignment (part 1) is solely ran using C++ desktop, there is no implementation of
+	Arduino needed. Please ensure that all of the included files are present in your working directory.
+	The following are steps to test the program using proper test files
+		1. Compile the program using "make"
+		2. Run the executable using following command ==> ./server < testfile.txt > solution.txt. Data
+		   will be taken from the testfile.txt and the output will be piped to solution.txt
+		3. You can view the solution.txt by opening into any choice of text editor
+	Meaningful solution in solution.txt will show the number of waypoints from chosen point to another.
+	If n number of waypoints are present, then n following lines will include a single waypoint starting from
+	start point to the end point. Upon reaching destination, 'E' character will mark the end of the program.
+
+
+Notes and Assumptions:
+	Code was implemented to the best of our ability and to the best of our understanding
+	from the description. Most of the helper functions and classes were initial given. We only take credit
+	for implementation of the server.cpp, dijkstra.cpp and dijkstra.h. 
+
+	Creation of the weighted graph from the map text file was aspired from work in weekly exercise 5. Changes were made
+	to read in additional values such as lat/lon coordinates.
+
+	There was a strange anomly that occur when compiling the dijkstra.cpp. A warning flag was raised due to wrong conversion
+	between signed and unsigned values in the fixHeapDown(). Although there was not any edits made to those file. We went with the suggestion of the compiler and fixed the issue by declaring lchild, rchild as unsigned int. There was no changes in the output or any abnormalites in the progam.
+
+	As we know, there will two points that will have the most waypoints on the map. The exact number of max waypoints will be extremely hard to determine. As a safe estimate, we set our array that stores those way points to max of 2000 waypoints. We assume that there will not be a scenario in which that number of waypoints is crossed.
